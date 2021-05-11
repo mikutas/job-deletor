@@ -1,0 +1,24 @@
+# permissions for end users to edit jobdeletors.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: jobdeletor-editor-role
+rules:
+- apiGroups:
+  - mikutas.example.com
+  resources:
+  - jobdeletors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mikutas.example.com
+  resources:
+  - jobdeletors/status
+  verbs:
+  - get

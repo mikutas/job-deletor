@@ -3,4 +3,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: job-deletor
 repo: github.com/mikutas/job-deletor
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: example.com
+  group: mikutas
+  kind: JobDeletor
+  path: github.com/mikutas/job-deletor/api/v1alpha1
+  version: v1alpha1
 version: "3"

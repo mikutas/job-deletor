@@ -1,0 +1,7 @@
+apiVersion: mikutas.example.com/v1alpha1
+kind: JobDeletor
+metadata:
+  name: jobdeletor-sample
+spec:
+  # Add fields here
+  foo: bar
