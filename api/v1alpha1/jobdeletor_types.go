@@ -29,6 +29,10 @@ type JobDeletorSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
+	// +kubebuilder:validation:Format=[]string
+	// +optional
+	TargetNamespaces []string `json:"targetNamespaces"`
+
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Format=string
 	// +kubebuilder:validation:Pattern=succeeded|failed|all

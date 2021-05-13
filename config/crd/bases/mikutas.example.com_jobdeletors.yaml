@@ -39,6 +39,11 @@ spec:
           spec:
             description: JobDeletorSpec defines the desired state of JobDeletor
             properties:
+              targetNamespaces:
+                format: '[]string'
+                items:
+                  type: string
+                type: array
               targetStatus:
                 format: string
                 pattern: succeeded|failed|all
