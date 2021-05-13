@@ -1,7 +1,7 @@
 
 # Image URL to use all building/pushing image targets
 IMG ?= ghcr.io/mikutas/job-deletor:$(shell git describe --abbrev=0 --tags)
-LOCAL_IMG ?= localhost:5000/job-deletor:$(shell git describe --tags)
+LOCAL_IMG ?= localhost:5000/job-deletor:$(shell git describe --tags || echo v0.0.0)
 # Produce CRDs that work back to Kubernetes 1.11 (no version conversion)
 CRD_OPTIONS ?= "crd:trivialVersions=true,preserveUnknownFields=false"
 

@@ -17,6 +17,7 @@ limitations under the License.
 package v1alpha1
 
 import (
+	batchv1 "k8s.io/api/batch/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -28,17 +29,22 @@ type JobDeletorSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of JobDeletor. Edit jobdeletor_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Format=string
+	DeletionTargetStatus string `json:"deletionTargetStatus"`
 }
 
 // JobDeletorStatus defines the observed state of JobDeletor
 type JobDeletorStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	// +optional
+	DeletedJobs []batchv1.Job `json:"deletedJobs"`
 }
 
 //+kubebuilder:object:root=true
+//+kubebuilder:resource:shortName=jd;jds
 //+kubebuilder:subresource:status
 
 // JobDeletor is the Schema for the jobdeletors API

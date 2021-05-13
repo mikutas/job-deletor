@@ -48,9 +48,20 @@ type JobDeletorReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.7.2/pkg/reconcile
 func (r *JobDeletorReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = r.Log.WithValues("jobdeletor", req.NamespacedName)
+	log := r.Log.WithValues("jobdeletor", req.NamespacedName)
 
 	// your logic here
+	var jd mikutasv1alpha1.JobDeletor
+	log.Info("fetching DeploymentMaxAge Resource")
+	if err := r.Get(ctx, req.NamespacedName, &jd); err != nil {
+		log.Error(err, "unable to fetch JobDeletor")
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+	}
+
+	log.Info("jd.ClusterName=" + jd.ClusterName)
+	log.Info("jd.Namespace=" + jd.Namespace)
+	log.Info("jd.Name=" + jd.Name)
+	log.Info("jd.Spec.DeletionTargetStatus=" + jd.Spec.DeletionTargetStatus)
 
 	return ctrl.Result{}, nil
 }
