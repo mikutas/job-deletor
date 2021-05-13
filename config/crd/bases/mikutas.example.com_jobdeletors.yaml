@@ -41,6 +41,7 @@ spec:
             properties:
               deletionTargetStatus:
                 format: string
+                pattern: succeeded|failed|all
                 type: string
             required:
             - deletionTargetStatus

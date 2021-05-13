@@ -31,6 +31,7 @@ type JobDeletorSpec struct {
 
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Format=string
+	// +kubebuilder:validation:Pattern=succeeded|failed|all
 	DeletionTargetStatus string `json:"deletionTargetStatus"`
 }
 
