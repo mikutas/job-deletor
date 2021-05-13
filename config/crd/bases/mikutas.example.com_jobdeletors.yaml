@@ -39,12 +39,12 @@ spec:
           spec:
             description: JobDeletorSpec defines the desired state of JobDeletor
             properties:
-              deletionTargetStatus:
+              targetStatus:
                 format: string
                 pattern: succeeded|failed|all
                 type: string
             required:
-            - deletionTargetStatus
+            - targetStatus
             type: object
           status:
             description: JobDeletorStatus defines the observed state of JobDeletor

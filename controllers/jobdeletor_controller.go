@@ -61,7 +61,7 @@ func (r *JobDeletorReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 	log.Info("jd.ClusterName=" + jd.ClusterName)
 	log.Info("jd.Namespace=" + jd.Namespace)
 	log.Info("jd.Name=" + jd.Name)
-	log.Info("jd.Spec.DeletionTargetStatus=" + jd.Spec.DeletionTargetStatus)
+	log.Info("jd.Spec.TargetStatus=" + jd.Spec.TargetStatus)
 
 	return ctrl.Result{}, nil
 }

@@ -3,6 +3,6 @@ kind: JobDeletor
 metadata:
   name: jobdeletor-sample
 spec:
-  deletionTargetStatus: succeeded
-  #deletionTargetStatus: failed
-  #deletionTargetStatus: all
+  targetStatus: succeeded
+  #targetStatus: failed
+  #targetStatus: all

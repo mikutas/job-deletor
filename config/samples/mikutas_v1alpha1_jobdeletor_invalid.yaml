@@ -3,4 +3,4 @@ kind: JobDeletor
 metadata:
   name: jobdeletor-sample
 spec:
-  deletionTargetStatus: hoge
+  targetStatus: hoge
