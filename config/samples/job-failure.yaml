@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sleep-fail
+spec:
+  template:
+    spec:
+      containers:
+      - name: sleeper
+        image: alpine
+        command: ["sleep", "a"]
+      restartPolicy: OnFailure
+  backoffLimit: 2

@@ -1,10 +1,8 @@
 apiVersion: mikutas.example.com/v1alpha1
 kind: JobDeletor
 metadata:
-  name: jobdeletor-sample
+  name: jobdeletor-sample-succeeded
 spec:
   targetNamespaces:
-  - default
+  - laboratory
   targetStatus: succeeded
-  #targetStatus: failed
-  #targetStatus: all
