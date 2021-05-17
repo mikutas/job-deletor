@@ -16,6 +16,23 @@ make install
 make deploy
 ```
 
+## Use
+
+
+Sample CR
+
+`config/samples/mikutas_v1alpha1_jobdeletor_all.yaml`
+
+```
+kubectl apply -f config/samples/mikutas_v1alpha1_jobdeletor_all.yaml
+```
+
+Sample Job
+
+```
+kubectl apply -f config/samples/job-success.yaml
+```
+
 ## Delete
 
 ```
